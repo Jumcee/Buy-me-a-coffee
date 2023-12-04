@@ -1,9 +1,6 @@
 //SPDX-License-Identifier: Unlicense
 pragma solidity ^0.8.0;
 
-// Switch this to your own contract address once deployed, for bookkeeping!
-// Example Contract Address on Goerli: 0xDBa03676a2fBb6711CB652beF5B7416A53c1421D
-
 contract BuyMeACoffee {
     // Event to emit when a Memo is created.
     event NewMemo(
@@ -36,12 +33,10 @@ contract BuyMeACoffee {
         return memos;
     }
 
-    // buy a coffee for owner (sends an ETH tip and leaves a memo)
-    // name of the coffee purchaser
-    // a nice message from the purchaser
+    // buy a coffee form owner (sends an ETH tip and leaves a memo)
+    // name of the coffee purchaser and a nice message from the purchaser
     function buyCoffee(string memory _name, string memory _message) public payable {
-        // Must accept more than 0 ETH for a coffee.
-        require(msg.value > 0, "can't buy coffee for free!");
+        require(msg.value > 0, "can't buy coffee for free!"); // Must accept more than 0 ETH for a coffee.
 
         // Add the memo to storage!
         memos.push(Memo(
