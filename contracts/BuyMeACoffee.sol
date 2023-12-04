@@ -33,7 +33,7 @@ contract BuyMeACoffee {
         return memos;
     }
 
-    // buy a coffee form owner (sends an ETH tip and leaves a memo)
+    // buy a coffee for owner (sends an ETH tip and leaves a memo)
     // name of the coffee purchaser and a nice message from the purchaser
     function buyCoffee(string memory _name, string memory _message) public payable {
         require(msg.value > 0, "can't buy coffee for free!"); // Must accept more than 0 ETH for a coffee.

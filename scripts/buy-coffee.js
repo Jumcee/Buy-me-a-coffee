@@ -35,6 +35,7 @@ async function main() {
   const buyMeACoffee = await BuyMeACoffee.deploy();
 
   // Deploy the contract.
+  await buyMeACoffee.deployed();
   console.log("BuyMeACoffee deployed to:", buyMeACoffee.address);
 
   // Check balances before the coffee purchase.
@@ -64,6 +65,7 @@ async function main() {
   const memos = await buyMeACoffee.getMemos();
   printMemos(memos);
 }
+
 
 main()
   .then(() => process.exit(0))
